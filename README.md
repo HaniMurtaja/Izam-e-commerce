@@ -9,9 +9,14 @@ Authorization: Bearer {token}
 Endpoints
 
 1. Get Products ->
+ 
    Endpoint: GET /products
-   request: GET /products?category=Electronics&min_price=100&page=1
+   
+   request:
+   GET /products?category=Electronics&min_price=100&page=1
+   
    response:
+   
    "data": [
     {
       "id": 1,
@@ -22,14 +27,20 @@ Endpoints
 
    
 2. Create a New Order ->
-   Endpoint: POST /orders
+
+   Endpoint:
+   POST /orders
+   
    request:
+   
    {
   "products":
  { "id": 1, "quantity": 2 },
 { "id": 2, "quantity": 3 }
 ]
+
    response:
+   
    "message": "Order placed successfully",
   "order": {
     "id": 5,
@@ -42,11 +53,17 @@ Endpoints
       },
 
    
-3. Get Order Details
-   Endpoint: GET /orders/{id}
+3. Get Order Details  ->
+4. 
+   Endpoint:
+   GET /orders/{id}
+   
    request:
+   
    GET /orders/5
+   
    response:
+   
   "id": 5,
   "user_id": 1,
   "products": [
@@ -58,22 +75,33 @@ Endpoints
     },
 
    
-4. User Authentication (Login)
- Endpoint: POST /login
+4. User Authentication   ->
+   
+ Endpoint:
+ 
+ POST /login
+ 
    request:
+   
    {
   "email": "user@example.com",
   "password": "password123"
 }
 
    response:
+   
    {
   "token": "2|1pW0Rv3sNi..."
    }
 
+
 5. Logout User
-   Endpoint: POST /logout
+6. 
+   Endpoint:
+   POST /logout
+   
    response:
+   
    {
   "message": "Logged out successfully"
 }
