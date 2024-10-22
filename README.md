@@ -1,3 +1,85 @@
+#API Documentation
+
+Base URL
+http://domain.com/api
+
+Authentication
+Authorization: Bearer {token}
+
+Endpoints
+
+1. Get Products ->
+   Endpoint: GET /products
+   request: GET /products?category=Electronics&min_price=100&page=1
+   response:
+   "data": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "price": 500,
+      "category": "Electronics"
+    },
+
+   
+2. Create a New Order ->
+   Endpoint: POST /orders
+   request:
+   {
+  "products":
+ { "id": 1, "quantity": 2 },
+{ "id": 2, "quantity": 3 }
+]
+   response:
+   "message": "Order placed successfully",
+  "order": {
+    "id": 5,
+    "user_id": 1,
+    "products": [
+      {
+        "id": 1,
+        "name": "Laptop",
+        "quantity": 2
+      },
+
+   
+3. Get Order Details
+   Endpoint: GET /orders/{id}
+   request:
+   GET /orders/5
+   response:
+  "id": 5,
+  "user_id": 1,
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "quantity": 2,
+      "price": 500
+    },
+
+   
+4. User Authentication (Login)
+ Endpoint: POST /login
+   request:
+   {
+  "email": "user@example.com",
+  "password": "password123"
+}
+
+   response:
+   {
+  "token": "2|1pW0Rv3sNi..."
+   }
+
+5. Logout User
+   Endpoint: POST /logout
+   response:
+   {
+  "message": "Logged out successfully"
+}
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
